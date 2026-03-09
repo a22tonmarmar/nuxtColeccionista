@@ -6,10 +6,25 @@
     <li>{{ item.height === 0 ? "" : `Altura: ${item.height}` }}</li>
     <li>{{ item.weight === 0 ? "" : `Pes: ${item.weight}` }}</li>
   </ul>
+  <div class="ai-container">
+    <h3>✨ Informació Extra (IA)</h3>
+
+    <!-- Passem el nom de l'item actual a la funció -->
+    <button @click="generateCreativeText(item.name)" :disabled="isGenerating">
+      {{ isGenerating ? "Pensant..." : "Generar dada curiosa" }}
+    </button>
+
+    <p v-if="aiResponse" class="response-box">
+      {{ aiResponse }}
+    </p>
+  </div>
 </template>
 
 <script setup>
+import { useGemini } from "../composables/useGemini";
+
 const { item } = defineProps({ item: Object });
+const { aiResponse, isGenerating, generateCreativeText } = useGemini();
 </script>
 
 <style scoped>
