@@ -24,7 +24,7 @@
 import { useGemini } from "../../../server/composables/useGemini";
 
 const { item } = defineProps({ item: Object });
-const { aiResponse, isGenerating, generateCreativeText } = useGemini();
+const { aiResponse, isGenerating, error, generateCreativeText } = useGemini();
 </script>
 
 <style scoped>
