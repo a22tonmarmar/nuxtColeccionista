@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { useGemini } from "../composables/useGemini";
+import { useGemini } from "../../../server/composables/useGemini";
 
 const { item } = defineProps({ item: Object });
 const { aiResponse, isGenerating, generateCreativeText } = useGemini();
