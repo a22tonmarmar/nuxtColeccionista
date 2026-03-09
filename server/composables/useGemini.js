@@ -4,7 +4,8 @@ import { GoogleGenerativeAI } from "@google/generative-ai"; // USAR ESTA LIBRERÃ
 
 // Inicializamos la instancia fuera del hook para no recrearla en cada llamada
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_KEY);
+const config = useRuntimeConfig();
+const genAI = new GoogleGenerativeAI(config.geminiKey);
 
 export const useGemini = () => {
   const aiResponse = ref("");
@@ -23,7 +24,7 @@ export const useGemini = () => {
     try {
       // 1. Instanciamos el modelo CORRECTO que tienes en tu lista
 
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
       // 2. Definimos el prompt
 

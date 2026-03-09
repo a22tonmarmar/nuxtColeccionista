@@ -8,5 +8,6 @@ export default defineNuxtConfig({
   modules: ["@pinia/nuxt"],
   runtimeConfig: {
     pokemonApiUrl: "https://pokeapi.co/api/v2",
+    geminiKey: "AIzaSyBbH1F7iwslDp9zJxHymjPTLbAoAnYSv_o",
   },
 });
